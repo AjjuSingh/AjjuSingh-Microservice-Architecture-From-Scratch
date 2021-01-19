@@ -1,0 +1,15 @@
+
+server:
+  port: 8000
+
+spring:
+  application:
+    name: currency-exchange-service
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+  datasource:
+    platform: h2
+    url: jdbc:h2:mem:exchange
