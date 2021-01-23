@@ -20,14 +20,12 @@ public class CurrencyExchangeController {
     private ExchangeValueRepository valueRepository;
 
     /// Convert from USD to INR
-    @GetMapping("/currency-exchange/{from}/to/{to}")
+    @GetMapping("/currency-exchange/from/{from}/to/{to}")
     public ExchangeValue getExchangeValue(@PathVariable String from, @PathVariable String to){
         ExchangeValue value = valueRepository.findByFromAndTo(from, to);
         value.setPort(Integer.parseInt(environment.getProperty("local.server.port")));
         return value;
     }
-
-
 
 
 }
